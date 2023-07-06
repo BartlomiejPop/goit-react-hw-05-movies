@@ -29,6 +29,9 @@ export const MovieDetails = () => {
   return (
     <div>
       <div>
+        <button>
+          <Link to="/">Go back</Link>
+        </button>
         <img
           width="200px"
           src={`https://image.tmdb.org/t/p/w500${details.poster_path}`}
