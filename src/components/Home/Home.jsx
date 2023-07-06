@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 export const Home = trendings => {
+  console.log(trendings);
   return (
     <div>
       <h1>Trending today</h1>
@@ -16,4 +18,8 @@ export const Home = trendings => {
       </ul>
     </div>
   );
+};
+
+Home.propTypes = {
+  trendings: PropTypes.object,
 };
