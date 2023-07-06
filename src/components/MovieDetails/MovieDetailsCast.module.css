@@ -1,0 +1,5 @@
+.listItem {
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+}

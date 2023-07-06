@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import styles from './MovieDetailsCast.module.css';
 
 export const MovieDetailsCast = () => {
   const { movieId } = useParams();
@@ -21,7 +22,7 @@ export const MovieDetailsCast = () => {
       {cast.length > 0 ? (
         <ul>
           {cast.map(el => (
-            <li key={el.id}>
+            <li className={styles.listItem} key={el.id}>
               <img
                 width="150px"
                 src={`https://image.tmdb.org/t/p/w500${el.profile_path}`}

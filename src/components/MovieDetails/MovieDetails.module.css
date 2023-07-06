@@ -1,0 +1,36 @@
+.movieInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.wrapper {
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn {
+  width: 100px;
+  background-color: #2196f3;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+}
+.btn:hover {
+  background-color: #1976d2;
+}
+
+.overview {
+  width: 500px;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}

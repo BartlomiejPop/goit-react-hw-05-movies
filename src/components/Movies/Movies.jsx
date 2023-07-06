@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useSearchParams } from 'react-router-dom';
 import axios from 'axios';
+import styles from '../Movies/Movies.module.css';
 
 export const Movies = () => {
   const [value, setValue] = useState('');
@@ -21,8 +22,14 @@ export const Movies = () => {
 
   return (
     <div>
-      <input type="text" onChange={e => setValue(e.target.value)} />
-      <button onClick={() => searchMovies(value)}>Search</button>
+      <input
+        type="text"
+        className={styles.input}
+        onChange={e => setValue(e.target.value)}
+      />
+      <button className={styles.button} onClick={() => searchMovies(value)}>
+        Search
+      </button>
       {searchParams.size !== 0 ? (
         <ul>
           {movies.map(el => (

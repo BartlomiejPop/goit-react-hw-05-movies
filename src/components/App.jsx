@@ -1,6 +1,7 @@
 import React, { useEffect, useState, lazy, Suspense } from 'react';
 import axios from 'axios';
 import { Routes, Route, NavLink } from 'react-router-dom';
+import styles from './App.module.css';
 
 import { Home } from '../components/Home/Home';
 import { Movies } from '../components/Movies/Movies';
@@ -38,10 +39,14 @@ export const App = () => {
   }
 
   return (
-    <div>
+    <div className={styles.wrapper}>
       <nav>
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/movies">Movies</NavLink>
+        <NavLink to="/">
+          <button className={styles.homeBtn}>Home</button>
+        </NavLink>
+        <NavLink to="/movies">
+          <button className={styles.homeBtn}>Movies</button>
+        </NavLink>
       </nav>
       <Routes>
         {trendings.length !== 0 && (

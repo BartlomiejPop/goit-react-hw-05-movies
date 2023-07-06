@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { Link, Outlet } from 'react-router-dom';
+import styles from './MovieDetails.module.css';
 
 export const MovieDetails = () => {
   const { movieId } = useParams();
@@ -27,9 +28,9 @@ export const MovieDetails = () => {
   }
 
   return (
-    <div>
-      <div>
-        <button>
+    <div className={styles.wrapper}>
+      <div className={styles.movieInfo}>
+        <button className={styles.btn}>
           <Link to="/">Go back</Link>
         </button>
         <img
@@ -40,7 +41,7 @@ export const MovieDetails = () => {
         <h2>{details.title}</h2>
         <span>User Score: {Math.round(details.vote_average * 10)}%</span>
         <h3>Overview</h3>
-        <span>{details.overview}</span>
+        <span className={styles.overview}>{details.overview}</span>
         <h3>Genres</h3>
         <ul>
           {details.genres &&
@@ -51,21 +52,21 @@ export const MovieDetails = () => {
         <span>Additional information</span>
 
         <nav>
-          <ul>
+          <ul className={styles.list}>
             <li>
-              <Link to="cast">Cast</Link>
+              <Link className={styles.btn} to="cast">
+                Cast
+              </Link>
             </li>
             <li>
-              <Link to="review">Reviews</Link>
+              <Link className={styles.btn} to="review">
+                Reviews
+              </Link>
             </li>
           </ul>
           <Outlet />
         </nav>
       </div>
-      {/* <Routes>
-        <Route path={`/movies/${movieId}/cast`} id={movieId} />
-        <Route path={`/movies/${movieId}/reviews`} />
-      </Routes> */}
     </div>
   );
 };
